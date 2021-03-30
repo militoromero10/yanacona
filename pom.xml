@@ -15,6 +15,7 @@
         <module>yanacona-repository</module>
         <module>yanacona-converter</module>
         <module>yanacona-web</module>
+        <module>yanacona-app</module>
     </modules>
 
     <groupId>com.yanacona</groupId>
