@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -41,4 +42,30 @@ public class Department {
     @Version
     private int version;
 
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", daneCode='" + daneCode + '\'' +
+                ", createdAt=" + createdAt +
+                ", modifiedAt=" + modifiedAt +
+                ", version=" + version +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if( o == null || getClass()!=o.getClass())
+            return false;
+        Department department = (Department) o;
+        return Objects.equals(id, department.id)  &&
+                Objects.equals(name, department.getName()) &&
+                Objects.equals(daneCode, department.getDaneCode()) &&
+                Objects.equals(modifiedAt, department.getModifiedAt()) &&
+                Objects.equals(createdAt, department.getCreatedAt()) &&
+                Objects.equals(version, department.getVersion());
+
+    }
 }
